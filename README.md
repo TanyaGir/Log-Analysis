@@ -77,7 +77,7 @@ The program you write in this project will run from the command line. It won't t
    ```
    ```
      create view errorrate4 as 
-     select errors2.day, errors2.errors, totals2.totals, (errors2.errors/totals2.totals :: float) as errvalue
+     select errors2.day, (errors2.errors/totals2.totals :: float) as errvalue
      from errors2 , totals2
      where errors2.day = totals2.day
      order by day asc;
@@ -85,7 +85,7 @@ The program you write in this project will run from the command line. It won't t
    ``` 
    ``` 
      create view lastview as
-     select day, (errorvalue *100) as error 
+     select day, (errvalue *100) as error 
      from errorrate4;
      
    ``` 
