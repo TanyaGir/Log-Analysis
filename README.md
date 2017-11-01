@@ -53,7 +53,7 @@ The program you write in this project will run from the command line. It won't t
    Create the following views
    
    ```
-    create view logview as
+    create view logviews as
     select articles.author , count(*) as view
     from log, articles
     where articles.slug = substring (log.path , 10)
